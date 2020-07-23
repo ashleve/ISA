@@ -1,4 +1,4 @@
-Simple environment from on this tutorial: <br>
+Simple environment from this tutorial: <br>
 https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Create-New.md
 
 ## How to run
