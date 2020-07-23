@@ -1,6 +1,5 @@
-# ISA
-skool project
-
+Simple environment from on this tutorial: <br>
+https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Create-New.md
 
 ## How to run
 1. Create new conda environment, name it for example "mlagents"
