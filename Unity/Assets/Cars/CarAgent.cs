@@ -54,7 +54,7 @@ public class CarAgent : Agent
         if(direction == 3) {forward = -1;}
         if(direction == 4) {forward = 1;}
 
-        movement.move(rBody, right, forward);
+        movement.move(this, right, forward);
 
         // Rewards
         float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);

@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceMultiplier: 60
-  torqueMultiplier: 33
+  torqueMultiplier: 32
 --- !u!1 &8051239158349418819
 GameObject:
   m_ObjectHideFlags: 0

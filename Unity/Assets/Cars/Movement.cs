@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
 
 public abstract class Movement : MonoBehaviour {
-    public abstract void move(Rigidbody rBody, int right, int forward);
+    public abstract void move(CarAgent carAgent, int right, int forward);
 }
