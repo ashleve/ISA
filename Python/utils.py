@@ -37,6 +37,7 @@ class Memory:
         self.rewards = {}
         self.dones = {}
         self.log_probs = {}
+        self.state_values = {}
         self.reset()
 
     def reset(self):
@@ -46,6 +47,7 @@ class Memory:
             self.rewards[id] = []
             self.dones[id] = []
             self.log_probs[id] = []
+            self.state_values[id] = []
 
     def size(self):
         return sum(len(self.states[id]) for id in self.agent_ids)

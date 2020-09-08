@@ -23,7 +23,7 @@ class Actor(nn.Module):
         std = self.log_std.expand_as(mean).exp()
         pi = Normal(mean, std)
         a = pi.sample()
-        return a, pi.log_prob(a).sum(1), pi
+        return a, pi.log_prob(a).sum(1, keepdim=True), pi
 
 
 class Critic(nn.Module):
@@ -40,4 +40,4 @@ class Critic(nn.Module):
 
     def forward(self, state):
         v = self.critic(state)
-        return torch.squeeze(v)
+        return v

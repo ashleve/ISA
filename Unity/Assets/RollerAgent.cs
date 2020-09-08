@@ -31,8 +31,13 @@ public class RollerAgent : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         // Target and Agent positions
-        sensor.AddObservation(Target.localPosition);
-        sensor.AddObservation(this.transform.localPosition);
+        /*sensor.AddObservation(Target.localPosition / 5);
+        sensor.AddObservation(this.transform.localPosition / 5);
+*/
+        sensor.AddObservation(Target.localPosition.x);
+        sensor.AddObservation(Target.localPosition.z);
+        sensor.AddObservation(this.transform.localPosition.x);
+        sensor.AddObservation(this.transform.localPosition.z);
 
         // Agent velocity
         sensor.AddObservation(rBody.velocity.x);
@@ -51,6 +56,8 @@ public class RollerAgent : Agent
         // Rewards
         float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);
 
+        SetReward(-0.005f);
+
         // Reached target
         if (distanceToTarget < 1.42f)
         {
@@ -61,6 +68,7 @@ public class RollerAgent : Agent
         // Fell off platform
         if (this.transform.localPosition.y < 0)
         {
+            SetReward(-1.0f);
             EndEpisode();
         }
     }
