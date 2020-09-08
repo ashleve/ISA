@@ -7,18 +7,16 @@ import time
 env = UnityEnvironment()
 env = EnvWrapper(env)
 
-
-decision_steps = env.reset()
-agent_ids = decision_steps.agent_id
-memory = Memory(agent_ids)
+memory = Memory(env.agent_ids)
 
 start = time.time()
 
+decision_steps = env.reset()
 step = 0
 last_states = {}
 last_actions = {}
 last_log_probs = {}
-while step < 1000:
+while step < 10000:
 
     for id in decision_steps.agent_id:
         last_states[id] = decision_steps[id].obs[0]
@@ -55,10 +53,9 @@ while step < 1000:
         memory.dones[id].append(False)
         # memory.log_probs[id].append(last_log_probs[id])
 
-    decision_steps = new_decision_steps
-
-    if len(new_decision_steps) > 0:
         step += 1
+
+    decision_steps = new_decision_steps
 
 
 end = time.time()

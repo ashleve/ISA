@@ -5,6 +5,7 @@ class EnvWrapper:
 
         self.behavior_name = list(env.behavior_specs)[0]
         self._spec = env.behavior_specs[self.behavior_name]
+        self.agent_ids = self.env.get_steps(self.behavior_name)[0].agent_id
 
         self.state_shape = self._spec.observation_shapes[0]
         self.state_size = self.state_shape[0]
