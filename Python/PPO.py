@@ -43,7 +43,7 @@ config.action_high = 1
 config.action_low = -1
 
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 device = torch.device('cpu')
 config.device = device.type
 print(device)
@@ -63,8 +63,6 @@ memory = Memory(env.agent_ids)
 def compute_GAE(rewards, state_values, done, gamma, lamb):
     """
         Computes Generalized Advantage Estimations.
-        Params:
-            gamma - Discount.
     """
     returns = [rewards[-1] + state_values[-1]]
     running_sum = rewards[-1] - state_values[-1]
@@ -81,8 +79,6 @@ def compute_GAE(rewards, state_values, done, gamma, lamb):
 def compute_r2g(rewards, done, gamma):
     """
         Computes discounted rewards-to-go.
-        Params:
-            gamma - Discount.
     """
     rewards2go = []
     running_sum = 0
