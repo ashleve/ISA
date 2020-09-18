@@ -4,19 +4,19 @@ from torch.distributions import Normal
 
 
 class Actor(nn.Module):
-    def __init__(self, config):
+    def __init__(self, obs_space, hidden_size, action_space):
         super(Actor, self).__init__()
 
         self.actor = nn.Sequential(
-            nn.Linear(config.obs_space, config.hidden_size),
+            nn.Linear(obs_space, hidden_size),
             nn.Tanh(),
-            nn.Linear(config.hidden_size, 64),
+            nn.Linear(hidden_size, 64),
             nn.Tanh(),
-            nn.Linear(64, config.action_space),
+            nn.Linear(64, action_space),
             nn.Tanh()
         )
 
-        self.log_std = nn.Parameter(torch.zeros(config.action_space), requires_grad=True)
+        self.log_std = nn.Parameter(torch.zeros(action_space), requires_grad=True)
 
     def forward(self, state):
         mean = self.actor(state)
@@ -27,13 +27,13 @@ class Actor(nn.Module):
 
 
 class Critic(nn.Module):
-    def __init__(self, config):
+    def __init__(self, obs_space, hidden_size):
         super(Critic, self).__init__()
 
         self.critic = nn.Sequential(
-            nn.Linear(config.obs_space, config.hidden_size),
+            nn.Linear(obs_space, hidden_size),
             nn.Tanh(),
-            nn.Linear(config.hidden_size, 64),
+            nn.Linear(hidden_size, 64),
             nn.Tanh(),
             nn.Linear(64, 1)
         )

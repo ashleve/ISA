@@ -1,5 +1,3 @@
-from collections import deque
-
 import torch
 import torch.nn as nn
 from torch.utils.data import SubsetRandomSampler, BatchSampler
@@ -9,39 +7,39 @@ import numpy as np
 from mlagents_envs.environment import UnityEnvironment
 from utils import EnvWrapper, Memory
 from models import Actor, Critic
+from collections import deque
 import time
 
 
-wandb.init(project="PPO_continuous2", group='roller-agent', job_type="eval")
-
-config = wandb.config
-config.env_name = 'roller-agent'
-
-
+print("Press play in Unity.")
 # This is a non-blocking call that only loads the environment.
 env = UnityEnvironment()
 env = EnvWrapper(env)
 
 
+model_upload_frequency = 30_000
+
+wandb.init(entity="rl-cars", project="ISA_mlagents", group=None, job_type="box_collecting")
+config = wandb.config
+
+config.env_name = 'wheel-sim-agent'
 config.gamma = 0.99
 config.lamb = 0.95
-config.batch_size = 10
-config.memory_size = 100
+config.batch_size = 64
+config.memory_size = 2048
 config.hidden_size = 128
 config.actor_lr = 0.0003
 config.critic_lr = 0.0003
-config.ppo_multiple_epochs = 3
+config.ppo_multiple_epochs = 8
 config.eps = 0.2
 config.grad_clip_norm = 0.5
 config.entropy_weight = 0.0
-config.max_steps = 50_000
+config.max_steps = 800_000
 config.num_of_agents = len(env.agent_ids)
-
 config.obs_space = env.state_size
 config.action_space = env.action_size
 config.action_high = 1
 config.action_low = -1
-
 
 # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 device = torch.device('cpu')
@@ -49,8 +47,8 @@ config.device = device.type
 print(device)
 
 
-actor = Actor(config).to(device)
-critic = Critic(config).to(device)
+actor = Actor(obs_space=config.obs_space, action_space=config.action_space, hidden_size=config.hidden_size).to(device)
+critic = Critic(obs_space=config.obs_space, hidden_size=config.hidden_size).to(device)
 
 wandb.watch(actor)
 wandb.watch(critic)
@@ -214,6 +212,7 @@ def train(max_steps=1_000_000):
 
     step = 0
     total_num_of_games = 0
+    last_uploaded_model_avg_rew = 0
     last_states = {}
     last_actions = {}
     last_log_probs = {}
@@ -269,27 +268,49 @@ def train(max_steps=1_000_000):
 
             step += 1
 
+            if step % model_upload_frequency == 0:
+                upload_model()
+                print("Model uploaded")
+
         decision_steps = new_decision_steps
 
         if memory.size() >= config.memory_size:
+
+            avg_reward = sum(ep_rewards) / len(ep_rewards)
+            avg_ep_length = sum(ep_lengths) / len(ep_lengths)
+
+            if last_uploaded_model_avg_rew < avg_reward:
+                save_model()
+                last_uploaded_model_avg_rew = avg_reward
+
             update()
             memory.reset()
 
-            print(f"Step: {step}, Avg reward: {sum(ep_rewards) / len(ep_rewards):.2f}")
+            print(f"Step: {step}, Avg reward: {avg_reward:.2f}")
 
             wandb.log({
                 "total number of steps": step,
                 "total number of games": total_num_of_games,
-                "avg reward": sum(ep_rewards) / len(ep_rewards),
-                "avg episode length": sum(ep_lengths) / len(ep_lengths)
+                "avg reward": avg_reward,
+                "avg episode length": avg_ep_length,
+
             }, step=step)
+
+
+def save_model():
+    torch.save(actor.state_dict(), "actor_model.h5")
+    torch.save(critic.state_dict(), "critic_model.h5")
+
+
+def upload_model():
+    wandb.save('actor_model.h5')
+    wandb.save('critic_model.h5')
 
 
 def main():
     train(max_steps=config.max_steps)
-
-    # torch.save(actor_critic.state_dict(), "model.h5")
-    # wandb.save('model.h5')
+    save_model()
+    upload_model()
 
 
 if __name__ == "__main__":
