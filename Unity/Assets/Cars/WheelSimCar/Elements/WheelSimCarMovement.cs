@@ -8,11 +8,7 @@ public class WheelSimCarMovement : Movement
 
     public float torque = 8f;
 
-    override public void move(CarAgent carAgent, float right, float forward) {
-        // Rigidbody rBody = carAgent.GetComponent<Rigidbody>();
-        // rBody.AddRelativeForce(new Vector3(0, 0, forward * forceMultiplier));
-        // rBody.AddRelativeTorque(0, right * torqueMultiplier, 0);
-        // WheelCollider collider = carAgent.GetComponents<WheelCollider>();
+    override public void move(float right, float forward) {
         wheelColliders = this.GetComponentsInChildren<WheelCollider>();
 
         foreach(WheelCollider wheel in wheelColliders) {
@@ -27,5 +23,10 @@ public class WheelSimCarMovement : Movement
             wheelColliders[3].motorTorque = torque * right * -1f;
         }
         
+    }
+
+    public override void reset()
+    {
+        // Nothing to reset
     }
 }

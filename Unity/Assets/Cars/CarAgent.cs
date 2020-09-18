@@ -26,6 +26,7 @@ public class CarAgent : Agent
             this.rBody.velocity = Vector3.zero;
             this.transform.localPosition = new Vector3(0, 1.2f, 0);
             this.transform.localRotation = Quaternion.identity;
+            this.movement.reset();
         }
 
         // Move the target to a new spot
@@ -53,7 +54,7 @@ public class CarAgent : Agent
 
         float steering = vectorAction[0];
         float force = vectorAction[1];
-        movement.move(this, steering, force);
+        movement.move(steering, force);
 
         // Rewards
         float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);

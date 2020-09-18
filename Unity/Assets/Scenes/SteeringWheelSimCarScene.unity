@@ -199,12 +199,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801936574}
-  m_LocalRotation: {x: 0.3804746, y: -0.0019765263, z: 0.0008091258, w: 0.9247889}
-  m_LocalPosition: {x: -0.73426753, y: 14.441247, z: -21.144636}
+  m_LocalRotation: {x: -0.4257657, y: 0.0019008912, z: -0.0008821828, w: -0.90483105}
+  m_LocalPosition: {x: -0.070926666, y: 1.930763, z: -1.0280695}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 1363480777}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1160044243
 GameObject:
@@ -296,7 +296,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1363480776
 PrefabInstance:
@@ -305,6 +305,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4987163007641137792}
     m_Modifications:
+    - target: {fileID: 7384280877791702547, guid: c28a2c91bff27ed4d97d2452c9332d9e,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_Stiffness
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384280878027020388, guid: c28a2c91bff27ed4d97d2452c9332d9e,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_Stiffness
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384280878617209373, guid: c28a2c91bff27ed4d97d2452c9332d9e,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_Stiffness
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384280878997445852, guid: c28a2c91bff27ed4d97d2452c9332d9e,
+        type: 3}
+      propertyPath: maxSteerAngle
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 7384280878997445853, guid: c28a2c91bff27ed4d97d2452c9332d9e,
         type: 3}
       propertyPath: m_Name
@@ -318,7 +338,7 @@ PrefabInstance:
     - target: {fileID: 7384280878997445854, guid: c28a2c91bff27ed4d97d2452c9332d9e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.74
       objectReference: {fileID: 0}
     - target: {fileID: 7384280878997445854, guid: c28a2c91bff27ed4d97d2452c9332d9e,
         type: 3}
@@ -373,6 +393,68 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1363480776}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1684258713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7384280878997445853, guid: c28a2c91bff27ed4d97d2452c9332d9e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1363480776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1684258716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684258713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DecisionPeriod: 10
+  TakeActionsBetweenDecisions: 0
+--- !u!114 &1684258717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684258713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423255daf7b89c8a4b5d0fa48f393870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
+  Target: {fileID: 4987163008306392752}
+  resetHeight: 0.038
+--- !u!114 &1684258718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684258713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BrainParameters:
+    VectorObservationSize: 1
+    NumStackedVectorObservations: 1
+    VectorActionSize: 02000000
+    VectorActionDescriptions: []
+    VectorActionSpaceType: 1
+  m_Model: {fileID: 0}
+  m_InferenceDevice: 0
+  m_BehaviorType: 0
+  m_BehaviorName: My Behavior
+  TeamId: 0
+  m_UseChildSensors: 1
 --- !u!1 &4987163007551931341
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +566,7 @@ Transform:
   - {fileID: 4987163008306392752}
   - {fileID: 1363480777}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4987163007641137855
 GameObject:

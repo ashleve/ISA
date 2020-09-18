@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
 public abstract class Movement : MonoBehaviour {
-    public abstract void move(CarAgent carAgent, float right, float forward);
+    public abstract void move(float steering, float force);
+
+    public abstract void reset();
 }

@@ -18,7 +18,7 @@ public struct Wheel
     public Axel axel;
 }
 
-public class CarController : MonoBehaviour
+public class CarController : Movement
 {
 
     [SerializeField]
@@ -47,12 +47,12 @@ public class CarController : MonoBehaviour
     private void Update()
     {
         AnimateWheels();
-        GetInputs();
+        //GetInputs();
     }
 
     private void LateUpdate()
     {
-        Move();
+        SetTorque();
         Turn();
     }
 
@@ -62,11 +62,13 @@ public class CarController : MonoBehaviour
         inputY = Input.GetAxis("Vertical");
     }
 
-    private void Move()
+    private void SetTorque()
     {
         foreach (var wheel in wheels)
         {
-            wheel.collider.motorTorque = inputY * maxAcceleration * 500 * Time.deltaTime;
+            wheel.collider.brakeTorque = 0f;
+            wheel.collider.motorTorque = inputY * maxAcceleration * 500f * Time.deltaTime;
+            Debug.Log(wheel.collider.motorTorque);
         }
     }
 
@@ -91,6 +93,31 @@ public class CarController : MonoBehaviour
             wheel.collider.GetWorldPose(out _pos, out _rot);
             wheel.model.transform.position = _pos;
             wheel.model.transform.rotation = _rot;
+        }
+    }
+
+    override public void move(float steering, float force)
+    {
+        inputX = steering;
+        inputY = force;
+    }
+
+    public override void reset()
+    {
+        Debug.Log("Reset wheels");
+        // Reset wheel torque
+        foreach (var wheel in wheels)
+        {
+            wheel.collider.motorTorque = 0f;
+            wheel.collider.brakeTorque = 100000f;
+        }
+        // Reset wheel steering
+        foreach (var wheel in wheels)
+        {
+            if (wheel.axel == Axel.Front)
+            {
+                wheel.collider.steerAngle = 0f;
+            }
         }
     }
 }
