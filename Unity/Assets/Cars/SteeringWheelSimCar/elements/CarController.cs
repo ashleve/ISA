@@ -44,14 +44,10 @@ public class CarController : Movement
     }
 
     
-    private void Update()
+    private void FixedUpdate()
     {
         AnimateWheels();
         //GetInputs();
-    }
-
-    private void LateUpdate()
-    {
         SetTorque();
         Turn();
     }
@@ -67,8 +63,8 @@ public class CarController : Movement
         foreach (var wheel in wheels)
         {
             wheel.collider.brakeTorque = 0f;
-            wheel.collider.motorTorque = inputY * maxAcceleration * 500f * Time.deltaTime;
-            Debug.Log(wheel.collider.motorTorque);
+            wheel.collider.motorTorque = inputY * maxAcceleration * 500f * Time.fixedDeltaTime;
+            // Debug.Log(wheel.collider.motorTorque);
         }
     }
 
@@ -79,7 +75,7 @@ public class CarController : Movement
             if (wheel.axel == Axel.Front)
             {
                 var _steerAngle = inputX * turnSensitivity * maxSteerAngle;
-                wheel.collider.steerAngle = Mathf.Lerp(wheel.collider.steerAngle,_steerAngle,0.5f);
+                wheel.collider.steerAngle = Mathf.Lerp(wheel.collider.steerAngle, _steerAngle, 0.5f);
             }
         }
     }
@@ -104,7 +100,7 @@ public class CarController : Movement
 
     public override void reset()
     {
-        Debug.Log("Reset wheels");
+        // Debug.Log("Reset wheels");
         // Reset wheel torque
         foreach (var wheel in wheels)
         {
