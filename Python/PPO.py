@@ -23,9 +23,7 @@ model_upload_frequency = 30_000
 wandb.init(entity="rl-cars", project="ISA_mlagents", group=None, job_type="box_collecting")
 config = wandb.config
 
-config.env_name = 'sliding-agent'
-# config.env_name = 'wheel-sim-agent'
-# config.env_name = 'steering-wheel-sim-agent'
+config.behavior_name = env.behavior_name
 config.gamma = 0.99
 config.lamb = 0.95
 config.batch_size = 64
