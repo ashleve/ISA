@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class WheelSimCarMovement : Movement
 {
-    private WheelCollider[] wheelColliders = new WheelCollider[4];
+    private WheelCollider[] wheelColliders;
 
     public float torque = 8f;
 
-    override public void move(float right, float forward) {
+
+    private void Start()
+    {
         wheelColliders = this.GetComponentsInChildren<WheelCollider>();
-
-        foreach(WheelCollider wheel in wheelColliders) {
-            wheel.motorTorque = torque * forward;
-        }
-
-        if(right != 0 || forward == 0) {
-            wheelColliders[0].motorTorque = torque * right * 1f;
-            wheelColliders[2].motorTorque = torque * right * 1f;
-
-            wheelColliders[1].motorTorque = torque * right * -1f;
-            wheelColliders[3].motorTorque = torque * right * -1f;
-        }
-        
     }
 
-    public override void reset()
+    public override void Move(float steering, float force)
+    {
+        steering = (steering + 1) / 2;
+
+        wheelColliders[0].motorTorque = torque * steering * force;
+        wheelColliders[2].motorTorque = torque * steering * force;
+
+        wheelColliders[1].motorTorque = torque * (1 - steering) * force;
+        wheelColliders[3].motorTorque = torque * (1 - steering) * force;
+    }
+
+    public override void ResetCar()
     {
         // Nothing to reset
     }

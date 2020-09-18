@@ -25,42 +25,55 @@ public class CarAgent : Agent
             this.rBody.angularVelocity = Vector3.zero;
             this.rBody.velocity = Vector3.zero;
             this.transform.localPosition = new Vector3(0, 1.2f, 0);
-            this.transform.localRotation = Quaternion.identity;
-            this.movement.reset();
+            this.transform.localEulerAngles = new Vector3(0, Random.Range(0, 360), 0);
+            this.movement.ResetCar();
         }
 
         // Move the target to a new spot
-        Target.localPosition = new Vector3(Random.value * 8 - 4,
-                                           0.6f,
-                                           Random.value * 8 - 4);
+        Target.localPosition = new Vector3(
+            Random.value * 8.5f - 4,
+            0.5f,
+            Random.value * 8.5f - 4
+        );
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
         // Target and Agent positions
-        sensor.AddObservation(Target.localPosition);
-        sensor.AddObservation(this.transform.localPosition);
+        sensor.AddObservation(Target.localPosition.x);
+        sensor.AddObservation(Target.localPosition.z);
+        sensor.AddObservation(this.transform.localPosition.x);
+        sensor.AddObservation(this.transform.localPosition.z);
 
         // Agent velocity
         sensor.AddObservation(rBody.velocity.x);
         sensor.AddObservation(rBody.velocity.z);
+
+        // Agent angular
+        sensor.AddObservation(rBody.angularVelocity.x);
+        sensor.AddObservation(rBody.angularVelocity.y);
+        sensor.AddObservation(rBody.angularVelocity.z);
+
+        // Agent direction
+        sensor.AddObservation(this.transform.forward.x);
+        sensor.AddObservation(this.transform.forward.z);
     }
 
     public override void OnActionReceived(float[] vectorAction)
     {
         // Debug.DrawRay(transform.position, this.transform.forward * 4, Color.green);
 
-        SetReward(-0.005f);
+        SetReward(-0.003f);
 
         float steering = vectorAction[0];
         float force = vectorAction[1];
-        movement.move(steering, force);
+        movement.Move(steering, force);
 
         // Rewards
         float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);
 
         // Reached target
-        if (distanceToTarget < 1.5f)
+        if (distanceToTarget < 1.4f)
         {
             SetReward(1.0f);
             EndEpisode();
@@ -80,6 +93,6 @@ public class CarAgent : Agent
     }
 
     private bool IsFlipped(Transform transform) {
-        return Mathf.Abs(Vector3.Dot(transform.up, Vector3.down)) < 0.925f;
+        return Mathf.Abs(Vector3.Dot(transform.up, Vector3.down)) < 0.985f;
     }
 }

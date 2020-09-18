@@ -113,3 +113,8 @@ GitHub.sublime-settings
 /.idea/inspectionProfiles/profiles_settings.xml
 /.idea/Python.iml
 /.idea/vcs.xml
+
+
+/wandb
+*.h5
+*.yaml

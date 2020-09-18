@@ -7,14 +7,14 @@ public class SlidingCarMovement : Movement
     public float forceMultiplier = 60f;
     public float torqueMultiplier = 33f;
 
-    override public void move(float right, float forward) 
+    override public void Move(float steering, float forward) 
     {
         Rigidbody rBody = this.GetComponent<Rigidbody>();
         rBody.AddRelativeForce(new Vector3(0, 0, forward * forceMultiplier));
-        rBody.AddRelativeTorque(0, right * torqueMultiplier, 0);
+        rBody.AddRelativeTorque(0, steering * torqueMultiplier, 0);
     }
 
-    override public void reset()
+    override public void ResetCar()
     {
         // Nothing to reset
     }
