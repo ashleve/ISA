@@ -24,7 +24,7 @@ public class CarAgent : Agent
             // If the Agent fell, zero its momentum
             this.rBody.angularVelocity = Vector3.zero;
             this.rBody.velocity = Vector3.zero;
-            this.transform.localPosition = new Vector3(0, 0.6f, 0);
+            this.transform.localPosition = new Vector3(0, 1.2f, 0);
             this.transform.localRotation = Quaternion.identity;
         }
 
@@ -47,14 +47,13 @@ public class CarAgent : Agent
 
     public override void OnActionReceived(float[] vectorAction)
     {
-        int right = 0, forward = 0;
-        int direction = Mathf.FloorToInt(vectorAction[0]);
-        if(direction == 1) {right = -1;}
-        if(direction == 2) {right = 1;}
-        if(direction == 3) {forward = -1;}
-        if(direction == 4) {forward = 1;}
+        // Debug.DrawRay(transform.position, this.transform.forward * 4, Color.green);
 
-        movement.move(this, right, forward);
+        SetReward(-0.005f);
+
+        float steering = vectorAction[0];
+        float force = vectorAction[1];
+        movement.move(this, steering, force);
 
         // Rewards
         float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);
@@ -75,14 +74,8 @@ public class CarAgent : Agent
 
     public override void Heuristic(float[] actionsOut)
     {
-        // Possible directions
-        int direction = 0;
-        if(Input.GetKey("w")) direction = 4;
-        if(Input.GetKey("a")) direction = 1;
-        if(Input.GetKey("s")) direction = 3;
-        if(Input.GetKey("d")) direction = 2;
-        
-        actionsOut[0] = direction;
+        actionsOut[0] = Input.GetAxis("Horizontal");
+        actionsOut[1] = Input.GetAxis("Vertical");
     }
 
     private bool IsFlipped(Transform transform) {

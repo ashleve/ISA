@@ -8,7 +8,7 @@ public class WheelSimCarMovement : Movement
 
     public float torque = 8f;
 
-    override public void move(CarAgent carAgent, int right, int forward) {
+    override public void move(CarAgent carAgent, float right, float forward) {
         // Rigidbody rBody = carAgent.GetComponent<Rigidbody>();
         // rBody.AddRelativeForce(new Vector3(0, 0, forward * forceMultiplier));
         // rBody.AddRelativeTorque(0, right * torqueMultiplier, 0);
