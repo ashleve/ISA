@@ -9,9 +9,9 @@ import yaml
 
 print("Downloading model...")
 api = wandb.Api()
-# run = api.run("rl-cars/ISA_mlagents/2y77vzvy")  # steeringWheelSimCar best model
-run = api.run("rl-cars/ISA_mlagents/12jz73au")  # steeringWheelSimCar best model
-# run = api.run("rl-cars/ISA_mlagents/2a7vi8uo")  # wheelSimCar best model
+# run = api.run("rl-cars/ISA_mlagents/runy4ymw")    # slidingCar best model
+# run = api.run("rl-cars/ISA_mlagents/36yofmal")    # wheelSimCar best model
+run = api.run("rl-cars/ISA_mlagents/2m2fkb0y")      # steeringWheelSimCar best model
 run.file("actor_model.h5").download(replace=True)
 run.file("critic_model.h5").download(replace=True)
 run.file("config.yaml").download(replace=True)

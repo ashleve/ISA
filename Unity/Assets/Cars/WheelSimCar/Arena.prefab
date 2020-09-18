@@ -246,6 +246,11 @@ PrefabInstance:
       propertyPath: m_BrainParameters.VectorActionSpaceType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8051239158289427077, guid: 5b122a8c83cf801d29471d47df89156b,
+        type: 3}
+      propertyPath: m_BehaviorName
+      value: WheelSimCarAgent
+      objectReference: {fileID: 0}
     - target: {fileID: 8051239158289427079, guid: 5b122a8c83cf801d29471d47df89156b,
         type: 3}
       propertyPath: m_LocalPosition.x

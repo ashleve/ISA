@@ -15,6 +15,7 @@ print("Press play in Unity.")
 # This is a non-blocking call that only loads the environment.
 env = UnityEnvironment()
 env = EnvWrapper(env)
+print(env.behavior_name)
 
 
 model_upload_frequency = 30_000
@@ -22,8 +23,8 @@ model_upload_frequency = 30_000
 wandb.init(entity="rl-cars", project="ISA_mlagents", group=None, job_type="box_collecting")
 config = wandb.config
 
-# config.env_name = 'sliding-agent'
-config.env_name = 'wheel-sim-agent'
+config.env_name = 'sliding-agent'
+# config.env_name = 'wheel-sim-agent'
 # config.env_name = 'steering-wheel-sim-agent'
 config.gamma = 0.99
 config.lamb = 0.95
