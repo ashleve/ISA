@@ -9,19 +9,19 @@ import yaml
 
 print("Downloading model...")
 api = wandb.Api()
-# run = api.run("rl-cars/ISA_mlagents/zbsmsijb")
-# run = api.run("rl-cars/ISA_mlagents/3houtt2v")
-run = api.run("rl-cars/ISA_mlagents/2a7vi8uo")
+# run = api.run("rl-cars/ISA_mlagents/2y77vzvy")  # steeringWheelSimCar best model
+run = api.run("rl-cars/ISA_mlagents/12jz73au")  # steeringWheelSimCar best model
+# run = api.run("rl-cars/ISA_mlagents/2a7vi8uo")  # wheelSimCar best model
 run.file("actor_model.h5").download(replace=True)
 run.file("critic_model.h5").download(replace=True)
 run.file("config.yaml").download(replace=True)
-print("Model downloaded...")
+print("Model downloaded.")
 
 
 with open('config.yaml') as file:
     config = yaml.load(file, Loader=yaml.FullLoader)
+# print(config)
 
-print(config)
 
 actor = Actor(
     obs_space=config["obs_space"]["value"],
@@ -30,8 +30,10 @@ actor = Actor(
 )
 
 actor.load_state_dict(torch.load('actor_model.h5'))
+print("Neural network initialized.")
 
 
+print("Press play in Unity.")
 env = UnityEnvironment()
 env = EnvWrapper(env)
 

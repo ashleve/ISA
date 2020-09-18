@@ -26,14 +26,14 @@ public class CarAgent : Agent
             this.rBody.velocity = Vector3.zero;
             this.transform.localPosition = new Vector3(0, 1.2f, 0);
             this.transform.localEulerAngles = new Vector3(0, Random.Range(0, 360), 0);
-            this.movement.reset();
+            this.movement.ResetCar();
         }
 
         // Move the target to a new spot
         Target.localPosition = new Vector3(
-            Random.value * 8 - 4,
-            0.6f,
-            Random.value * 8 - 4
+            Random.value * 8.5f - 4,
+            0.5f,
+            Random.value * 8.5f - 4
         );
     }
 
@@ -63,11 +63,11 @@ public class CarAgent : Agent
     {
         // Debug.DrawRay(transform.position, this.transform.forward * 4, Color.green);
 
-        SetReward(-0.0005f);
+        SetReward(-0.003f);
 
         float steering = vectorAction[0];
         float force = vectorAction[1];
-        movement.move(steering, force);
+        movement.Move(steering, force);
 
         // Rewards
         float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);

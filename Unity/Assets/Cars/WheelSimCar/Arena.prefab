@@ -93,7 +93,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7e72f9dbeec648249ba90248da0aaa85, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -231,6 +231,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7370084355477012265}
     m_Modifications:
+    - target: {fileID: 8051239158289427077, guid: 5b122a8c83cf801d29471d47df89156b,
+        type: 3}
+      propertyPath: m_BrainParameters.VectorObservationSize
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051239158289427077, guid: 5b122a8c83cf801d29471d47df89156b,
+        type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051239158289427077, guid: 5b122a8c83cf801d29471d47df89156b,
+        type: 3}
+      propertyPath: m_BrainParameters.VectorActionSpaceType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8051239158289427079, guid: 5b122a8c83cf801d29471d47df89156b,
         type: 3}
       propertyPath: m_LocalPosition.x

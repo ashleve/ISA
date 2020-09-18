@@ -18,7 +18,7 @@ public struct Wheel
     public Axel axel;
 }
 
-public class CarController : Movement
+public class SteeringWheelSimCarMovement : Movement
 {
 
     [SerializeField]
@@ -92,13 +92,13 @@ public class CarController : Movement
         }
     }
 
-    override public void move(float steering, float force)
+    override public void Move(float steering, float force)
     {
         inputX = steering;
         inputY = force;
     }
 
-    public override void reset()
+    public override void ResetCar()
     {
         // Debug.Log("Reset wheels");
         // Reset wheel torque

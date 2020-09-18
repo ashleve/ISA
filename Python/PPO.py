@@ -22,7 +22,9 @@ model_upload_frequency = 30_000
 wandb.init(entity="rl-cars", project="ISA_mlagents", group=None, job_type="box_collecting")
 config = wandb.config
 
-config.env_name = 'steering-wheel-sim-agent'
+# config.env_name = 'sliding-agent'
+config.env_name = 'wheel-sim-agent'
+# config.env_name = 'steering-wheel-sim-agent'
 config.gamma = 0.99
 config.lamb = 0.95
 config.batch_size = 64
@@ -30,11 +32,11 @@ config.memory_size = 2048
 config.hidden_size = 128
 config.actor_lr = 0.0003
 config.critic_lr = 0.0003
-config.ppo_multiple_epochs = 3
+config.ppo_multiple_epochs = 5
 config.eps = 0.2
 config.grad_clip_norm = 0.5
 config.entropy_weight = 0.0
-config.max_steps = 800_000
+config.max_steps = 1_000_000
 config.num_of_agents = len(env.agent_ids)
 config.obs_space = env.state_size
 config.action_space = env.action_size
@@ -274,7 +276,7 @@ def train(max_steps=1_000_000):
 
         decision_steps = new_decision_steps
 
-        if memory.size() >= config.memory_size:
+        if memory.size() >= config.memory_size or step >= max_steps:
 
             avg_reward = sum(ep_rewards) / len(ep_rewards)
             avg_ep_length = sum(ep_lengths) / len(ep_lengths)
