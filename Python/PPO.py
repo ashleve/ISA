@@ -206,8 +206,8 @@ def update():
 
 
 def train(max_steps=1_000_000):
-    ep_rewards = deque(maxlen=150)
-    ep_lengths = deque(maxlen=150)
+    ep_rewards = deque(maxlen=200)
+    ep_lengths = deque(maxlen=200)
 
     decision_steps = env.reset()
 
@@ -310,8 +310,6 @@ def upload_model():
 
 def main():
     train(max_steps=config.max_steps)
-    save_model()
-    upload_model()
 
 
 if __name__ == "__main__":
