@@ -11,7 +11,13 @@ print("Downloading model...")
 api = wandb.Api()
 # run = api.run("rl-cars/ISA_mlagents/runy4ymw")    # slidingCar best model
 # run = api.run("rl-cars/ISA_mlagents/36yofmal")    # wheelSimCar best model
-run = api.run("rl-cars/ISA_mlagents/2m2fkb0y")      # steeringWheelSimCar best model
+# run = api.run("rl-cars/ISA_mlagents/2m2fkb0y")      # steeringWheelSimCar best model
+# run = api.run("rl-cars/ISA_mlagents/8vguwx3z")      # drivingOn2Wheels 
+run = api.run("rl-cars/ISA_mlagents/1bkszs17")      # drivingOn2Wheels best model
+# run = api.run("rl-cars/ISA_mlagents/2geb03uw")      # drivingOn2Wheels even better but slower
+# run = api.run("rl-cars/ISA_mlagents/3ahug87n")      # drivingOn2Wheels lands more often
+# run = api.run("rl-cars/ISA_mlagents/1cmm9frb")      # drivingOn2Wheels best model by reward
+# run = api.run("rl-cars/ISA_mlagents/245c80pg")      # drivingOn2Wheels
 run.file("actor_model.h5").download(replace=True)
 run.file("critic_model.h5").download(replace=True)
 run.file("config.yaml").download(replace=True)

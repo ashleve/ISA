@@ -29,12 +29,22 @@ public class DrivingCarOn2WheelsAgent : Agent
 
     private void FixedUpdate()
     {
+        // reward for rotation up to 50 degrees
+        float forwardVelocity = rBody.transform.InverseTransformDirection(rBody.velocity).z;
         float rotationZ = transform.localEulerAngles.z;
-        if (rotationZ < 50 && rotationZ > 0)
+        if (rotationZ < 45) // for right side
         {
-            Vector3 localVel = rBody.transform.InverseTransformDirection(rBody.velocity);
-            SetReward(localVel.z * rotationZ / 50);
+            SetReward(forwardVelocity * Mathf.Clamp(rotationZ, 0, 25) / 25);
         }
+        else if (rotationZ > 315) // for left side
+        {
+            rotationZ = 360f - rotationZ;
+            SetReward(forwardVelocity * Mathf.Clamp(rotationZ, 0, 25) / 25);
+        }
+        /*else if(rotationZ > 90 && rotationZ < 270)
+        {
+            SetReward(-1);
+        }*/
     }
 
     public override void OnEpisodeBegin()
@@ -86,5 +96,15 @@ public class DrivingCarOn2WheelsAgent : Agent
     {
         actionsOut[0] = Input.GetAxis("Horizontal");
         actionsOut[1] = Input.GetAxis("Vertical");
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            // wall collision penalty
+            // Debug.Log(collision.relativeVelocity.magnitude);
+            SetReward(-4 * collision.relativeVelocity.magnitude);
+        }
     }
 }
