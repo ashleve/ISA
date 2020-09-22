@@ -40,7 +40,7 @@ public class RayCasts : MonoBehaviour
         }
     }
 
-    public RayCastObservations GetHitsAndDistances()
+    public RayCastObservations GetRayCastObservations()
     {
         var distances = new List<float>();
         var hits = new List<int>();
