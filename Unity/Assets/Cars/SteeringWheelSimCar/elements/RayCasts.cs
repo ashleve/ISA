@@ -3,21 +3,29 @@ using UnityEngine;
 
 public class RayCasts : MonoBehaviour
 {
-    // length of raycasts
     public float length = 10;
 
     [Range(1, 360)] public float angle = 120;
 
     public int numberOfRays = 10;
 
+    public bool drawRays = false;
+
+    public float rayCastsElevation = 0.4f;
     private void FixedUpdate()
+    {
+        if(drawRays)
+            DrawRayCasts();
+    }
+
+    private void DrawRayCasts()
     {
         RaycastHit hit;
         var rayInFront = ((transform.rotation) * Vector3.forward);
         for (var j = 0 - angle / 2; j < angle / 2; j += angle / numberOfRays)
         {
             var rayVector = Quaternion.AngleAxis(j, Vector3.up) * rayInFront;
-            var position = transform.position + new Vector3(0, 0.4f, 0);
+            var position = transform.position + new Vector3(0, rayCastsElevation, 0);
 
             var ray = new Ray(position, rayVector);
             if (Physics.Raycast(ray, out hit, length))
@@ -32,10 +40,10 @@ public class RayCasts : MonoBehaviour
         }
     }
 
-    public HitAndDistances GetHitsAndDistances()
+    public RayCastObservations GetHitsAndDistances()
     {
         var distances = new List<float>();
-        var hits = new List<bool>();
+        var hits = new List<int>();
         RaycastHit hit;
         var rayInFront = ((transform.rotation) * Vector3.forward);
         for (var j = 0 - angle / 2; j < angle / 2; j += angle / numberOfRays)
@@ -46,27 +54,30 @@ public class RayCasts : MonoBehaviour
             if (Physics.Raycast(ray, out hit, length))
             {
                 distances.Add(hit.distance);
-                hits.Add(true);
+                hits.Add(1);
             }
             else
             {
                 distances.Add(0);
-                hits.Add(false);
+                hits.Add(0);
             }
         }
 
-        return new HitAndDistances(distances, hits);
+        return new RayCastObservations(distances, hits);
     }
 }
 
-public struct HitAndDistances
+public struct RayCastObservations
 {
     private List<float> _distances;
-    private List<bool> _isHits;
+    private List<int> _hits;
 
-    public HitAndDistances(List<float> distances, List<bool> isHits)
+    public List<float> Distances => _distances;
+    public List<int> Hits => _hits;
+
+    public RayCastObservations(List<float> distances, List<int> hits)
     {
         _distances = distances;
-        _isHits = isHits;
+        _hits = hits;
     }
 }
