@@ -2,14 +2,15 @@
 
 public class coinRotater : MonoBehaviour
 {
-    public int speedOfRotation = 100;
+    [SerializeField]
+    private int speedOfRotation = 100;
+    [SerializeField]
+    private float floatingFrequency;
+    [SerializeField]
+    private float floatingAmplitude;
 
     private Vector3 position;
 
-    public float floatingFrequency = 1.2f;
-
-    public float floatingAmplitude = 0.2f;
-    
     // Update is called once per frame
     private void Start()
     {
@@ -18,7 +19,7 @@ public class coinRotater : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(0,0 ,speedOfRotation * Time.deltaTime);
-        transform.position = position + new Vector3(0 ,  floatingAmplitude * Mathf.Sin(Time.time * floatingFrequency), 0 );
+        transform.Rotate(0, 0, speedOfRotation * Time.deltaTime);
+        transform.position = position + new Vector3(0,  floatingAmplitude * Mathf.Sin(Time.time * floatingFrequency), 0);
     }
 }
