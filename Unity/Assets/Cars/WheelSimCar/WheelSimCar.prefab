@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 4828999038798681630}
   - component: {fileID: 1699510527777251183}
   m_Layer: 0
-  m_Name: MeshBL
+  m_Name: MeshBR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,7 +152,7 @@ Transform:
   m_LocalScale: {x: 0.4, y: 0.05, z: 0.4}
   m_Children: []
   m_Father: {fileID: 3420580517518438168}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!33 &4828999038798681630
 MeshFilter:
@@ -181,7 +181,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d91d46f8dd1ea7a46b388e18605aae6d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -230,10 +230,10 @@ Transform:
   m_LocalPosition: {x: 0, y: -0.147, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1668493226388115959}
   - {fileID: 7206734899636687680}
-  - {fileID: 6049911442731710392}
+  - {fileID: 1668493226388115959}
   - {fileID: 5560918419176789396}
+  - {fileID: 6049911442731710392}
   m_Father: {fileID: 5229469763039267230}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 3120933619843931471}
   - component: {fileID: 9050661775319039822}
   m_Layer: 0
-  m_Name: MeshFR
+  m_Name: MeshFL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -299,7 +299,7 @@ Transform:
   m_LocalScale: {x: 0.4, y: 0.05, z: 0.4}
   m_Children: []
   m_Father: {fileID: 3420580517518438168}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!33 &3120933619843931471
 MeshFilter:
@@ -328,7 +328,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d91d46f8dd1ea7a46b388e18605aae6d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 8401300606445780274}
   - component: {fileID: 1196116471065023386}
   m_Layer: 0
-  m_Name: MeshFL
+  m_Name: MeshFR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -380,7 +380,7 @@ Transform:
   m_LocalScale: {x: 0.4, y: 0.05, z: 0.4}
   m_Children: []
   m_Father: {fileID: 3420580517518438168}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!33 &8401300606445780274
 MeshFilter:
@@ -409,7 +409,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d91d46f8dd1ea7a46b388e18605aae6d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -710,7 +710,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8051239158289427080}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.614, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -748,15 +748,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 1
+    VectorObservationSize: 11
     NumStackedVectorObservations: 1
-    VectorActionSize: 05000000
+    VectorActionSize: 02000000
     VectorActionDescriptions: []
-    VectorActionSpaceType: 0
+    VectorActionSpaceType: 1
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: SlidingCarAgent
+  m_BehaviorName: WheelSimCarAgent
   TeamId: 0
   m_UseChildSensors: 0
 --- !u!114 &8080528993533879198
@@ -804,6 +804,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torque: 8
+  _centerOfMass: {x: 0, y: 0, z: 0}
+  wheels:
+  - model: {fileID: 5322442365169822202}
+    collider: {fileID: 2552289906993071823}
+    axel: 0
+  - model: {fileID: 4451992780846381384}
+    collider: {fileID: 438866593119040112}
+    axel: 0
+  - model: {fileID: 2009555199318098132}
+    collider: {fileID: 2365498220197305682}
+    axel: 1
+  - model: {fileID: 9023251770177969089}
+    collider: {fileID: 5075499194981053159}
+    axel: 1
 --- !u!1 &9023251770177969089
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +830,7 @@ GameObject:
   - component: {fileID: 7081035924754086514}
   - component: {fileID: 4031339982014662661}
   m_Layer: 0
-  m_Name: MeshBR
+  m_Name: MeshBL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -834,7 +848,7 @@ Transform:
   m_LocalScale: {x: 0.4, y: 0.05, z: 0.4}
   m_Children: []
   m_Father: {fileID: 3420580517518438168}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!33 &7081035924754086514
 MeshFilter:
@@ -863,7 +877,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d91d46f8dd1ea7a46b388e18605aae6d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
