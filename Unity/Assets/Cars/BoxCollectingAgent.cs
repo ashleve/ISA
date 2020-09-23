@@ -3,7 +3,8 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 
-public class CarAgent : Agent
+
+public class BoxCollectingAgent : Agent
 {
     protected Rigidbody rBody;
     protected Movement movement;

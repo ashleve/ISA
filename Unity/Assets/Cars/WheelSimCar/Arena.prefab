@@ -231,26 +231,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7370084355477012265}
     m_Modifications:
-    - target: {fileID: 8051239158289427077, guid: 5b122a8c83cf801d29471d47df89156b,
+    - target: {fileID: 6685352418786045492, guid: 5b122a8c83cf801d29471d47df89156b,
         type: 3}
-      propertyPath: m_BrainParameters.VectorObservationSize
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8051239158289427077, guid: 5b122a8c83cf801d29471d47df89156b,
+      propertyPath: wheels.Array.data[0].model
+      value: 
+      objectReference: {fileID: 6597610128749385533}
+    - target: {fileID: 6685352418786045492, guid: 5b122a8c83cf801d29471d47df89156b,
         type: 3}
-      propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8051239158289427077, guid: 5b122a8c83cf801d29471d47df89156b,
+      propertyPath: wheels.Array.data[1].model
+      value: 
+      objectReference: {fileID: 3430284473461901199}
+    - target: {fileID: 6685352418786045492, guid: 5b122a8c83cf801d29471d47df89156b,
         type: 3}
-      propertyPath: m_BrainParameters.VectorActionSpaceType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8051239158289427077, guid: 5b122a8c83cf801d29471d47df89156b,
+      propertyPath: wheels.Array.data[2].model
+      value: 
+      objectReference: {fileID: 1981244095238813108}
+    - target: {fileID: 6685352418786045492, guid: 5b122a8c83cf801d29471d47df89156b,
         type: 3}
-      propertyPath: m_BehaviorName
-      value: WheelSimCarAgent
-      objectReference: {fileID: 0}
+      propertyPath: wheels.Array.data[3].model
+      value: 
+      objectReference: {fileID: 9053523204025806497}
     - target: {fileID: 8051239158289427079, guid: 5b122a8c83cf801d29471d47df89156b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -321,6 +321,30 @@ PrefabInstance:
 --- !u!4 &719577545197847794 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8051239158289427079, guid: 5b122a8c83cf801d29471d47df89156b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7370084356172541557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6597610128749385533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4451992780846381384, guid: 5b122a8c83cf801d29471d47df89156b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7370084356172541557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3430284473461901199 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5322442365169822202, guid: 5b122a8c83cf801d29471d47df89156b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7370084356172541557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1981244095238813108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9023251770177969089, guid: 5b122a8c83cf801d29471d47df89156b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7370084356172541557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9053523204025806497 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2009555199318098132, guid: 5b122a8c83cf801d29471d47df89156b,
     type: 3}
   m_PrefabInstance: {fileID: 7370084356172541557}
   m_PrefabAsset: {fileID: 0}

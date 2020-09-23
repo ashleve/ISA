@@ -135,6 +135,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arena (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7370084355477012246, guid: df51837604be8474fb688ab4fb4c2120,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7370084355477012265, guid: df51837604be8474fb688ab4fb4c2120,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -203,6 +208,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Arena (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370084355477012246, guid: df51837604be8474fb688ab4fb4c2120,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7370084355477012265, guid: df51837604be8474fb688ab4fb4c2120,
         type: 3}
@@ -273,6 +283,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arena (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7370084355477012246, guid: df51837604be8474fb688ab4fb4c2120,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7370084355477012265, guid: df51837604be8474fb688ab4fb4c2120,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -341,6 +356,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Arena (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370084355477012246, guid: df51837604be8474fb688ab4fb4c2120,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7370084355477012265, guid: df51837604be8474fb688ab4fb4c2120,
         type: 3}
@@ -411,6 +431,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arena (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7370084355477012246, guid: df51837604be8474fb688ab4fb4c2120,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7370084355477012265, guid: df51837604be8474fb688ab4fb4c2120,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -479,6 +504,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Arena (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370084355477012246, guid: df51837604be8474fb688ab4fb4c2120,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7370084355477012265, guid: df51837604be8474fb688ab4fb4c2120,
         type: 3}
@@ -549,6 +579,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arena (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7370084355477012246, guid: df51837604be8474fb688ab4fb4c2120,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7370084355477012265, guid: df51837604be8474fb688ab4fb4c2120,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -618,6 +653,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arena (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7370084355477012246, guid: df51837604be8474fb688ab4fb4c2120,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7370084355477012265, guid: df51837604be8474fb688ab4fb4c2120,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -686,6 +726,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Arena (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370084355477012246, guid: df51837604be8474fb688ab4fb4c2120,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7370084355477012265, guid: df51837604be8474fb688ab4fb4c2120,
         type: 3}
@@ -931,6 +976,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arena (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7370084355477012246, guid: df51837604be8474fb688ab4fb4c2120,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7370084355477012265, guid: df51837604be8474fb688ab4fb4c2120,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -999,6 +1049,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Arena (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370084355477012246, guid: df51837604be8474fb688ab4fb4c2120,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7370084355477012265, guid: df51837604be8474fb688ab4fb4c2120,
         type: 3}

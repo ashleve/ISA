@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum Axel
-{
-    Front,
-    Rear
-}
-
-[Serializable]
-public struct Wheel
-{
-    public GameObject model;
-    public WheelCollider collider;
-    public Axel axel;
-}
-
 public class SteeringWheelSimCarMovement : Movement
 {
+    public enum Axel
+    {
+        Front,
+        Rear
+    }
+
+    [Serializable]
+    public struct Wheel
+    {
+        public GameObject model;
+        public WheelCollider collider;
+        public Axel axel;
+    }
 
     [SerializeField]
     private float maxAcceleration = 20.0f;
@@ -46,16 +45,8 @@ public class SteeringWheelSimCarMovement : Movement
     
     private void FixedUpdate()
     {
-        AnimateWheels();
-        //GetInputs();
-        SetTorque();
         Turn();
-    }
-
-    private void GetInputs()
-    {
-        inputX = Input.GetAxis("Horizontal");
-        inputY = Input.GetAxis("Vertical");
+        AnimateWheels();
     }
 
     private void SetTorque()
@@ -96,17 +87,18 @@ public class SteeringWheelSimCarMovement : Movement
     {
         inputX = steering;
         inputY = force;
+        SetTorque();
     }
 
     public override void ResetCar()
     {
-        // Debug.Log("Reset wheels");
         // Reset wheel torque
         foreach (var wheel in wheels)
         {
             wheel.collider.motorTorque = 0f;
             wheel.collider.brakeTorque = 100000f;
         }
+
         // Reset wheel steering
         foreach (var wheel in wheels)
         {

@@ -4,14 +4,12 @@ using UnityEngine;
 public class RayCasts : MonoBehaviour
 {
     public float length = 10;
-
     [Range(1, 360)] public float angle = 120;
-
     public int numberOfRays = 10;
-
     public bool drawRays = false;
-
     public float rayCastsElevation = 0.4f;
+
+
     private void FixedUpdate()
     {
         if(drawRays)
@@ -58,6 +56,7 @@ public class RayCasts : MonoBehaviour
             }
             else
             {
+                print(hit.distance);
                 distances.Add(0);
                 hits.Add(0);
             }
