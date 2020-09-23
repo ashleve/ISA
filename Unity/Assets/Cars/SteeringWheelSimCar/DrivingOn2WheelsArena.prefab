@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8044083975501652266
 Transform:
@@ -112,7 +112,7 @@ GameObject:
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8044083975645437553
 Transform:
@@ -207,7 +207,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 0
 --- !u!4 &8044083975660763128
 Transform:
@@ -302,7 +302,7 @@ GameObject:
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8044083975836887129
 Transform:
@@ -397,7 +397,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8044083976199061004
 Transform:
@@ -492,7 +492,7 @@ GameObject:
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8044083976324387320
 Transform:
@@ -614,65 +614,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8044083976606104632}
     m_Modifications:
-    - target: {fileID: 977926923, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1008619250, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
-      propertyPath: m_SuspensionDistance
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1402535669, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
-      propertyPath: m_SuspensionDistance
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1576558294, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
-      propertyPath: TakeActionsBetweenDecisions
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1576558294, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
-      propertyPath: DecisionPeriod
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1576558295, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
-      propertyPath: Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1576558295, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
-      propertyPath: MaxStep
-      value: 700
-      objectReference: {fileID: 0}
-    - target: {fileID: 1576558296, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
-      propertyPath: m_BrainParameters.VectorActionSpaceType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1576558296, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
-      propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1576558296, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
-      propertyPath: m_BrainParameters.VectorObservationSize
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1576558296, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
-      propertyPath: m_BehaviorName
-      value: DrivingOn2WheelsAgent
-      objectReference: {fileID: 0}
-    - target: {fileID: 1759834243, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
-      propertyPath: m_SuspensionDistance
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1784609713, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
-      propertyPath: m_SuspensionDistance
-      value: 0.15
-      objectReference: {fileID: 0}
     - target: {fileID: 1216336052455082, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
       propertyPath: m_Name
       value: sportsCarBlue
-      objectReference: {fileID: 0}
-    - target: {fileID: 1216336052455082, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4107931768422804, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -717,21 +661,6 @@ PrefabInstance:
     - target: {fileID: 4107931768422804, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710449391779349929, guid: 5d2d294a55c8dad4f863791b2ec6aa9e,
-        type: 3}
-      propertyPath: _centerOfMass.y
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710449391779349929, guid: 5d2d294a55c8dad4f863791b2ec6aa9e,
-        type: 3}
-      propertyPath: maxAcceleration
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710449391779349929, guid: 5d2d294a55c8dad4f863791b2ec6aa9e,
-        type: 3}
-      propertyPath: maxSteerAngle
-      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2d294a55c8dad4f863791b2ec6aa9e, type: 3}

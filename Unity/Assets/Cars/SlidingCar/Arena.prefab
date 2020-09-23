@@ -50,7 +50,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8225303771361289388
 Transform:
@@ -93,7 +93,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7e72f9dbeec648249ba90248da0aaa85, type: 2}
+  - {fileID: 2100000, guid: 5812c0bf615caa8478cf39b41b4406dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -189,7 +189,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1c860acbce2faf948813720a09661757, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -231,26 +231,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8225303771146262013}
     m_Modifications:
-    - target: {fileID: 8051239158076004728, guid: b1d3b5140421197268aafecb93ed53dc,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3bda7ebff2a4f254cb824bdb76516d2a, type: 2}
-    - target: {fileID: 8051239158289427077, guid: b1d3b5140421197268aafecb93ed53dc,
-        type: 3}
-      propertyPath: m_BrainParameters.VectorObservationSize
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8051239158289427077, guid: b1d3b5140421197268aafecb93ed53dc,
-        type: 3}
-      propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8051239158289427077, guid: b1d3b5140421197268aafecb93ed53dc,
-        type: 3}
-      propertyPath: m_BrainParameters.VectorActionSpaceType
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8051239158289427079, guid: b1d3b5140421197268aafecb93ed53dc,
         type: 3}
       propertyPath: m_LocalPosition.x

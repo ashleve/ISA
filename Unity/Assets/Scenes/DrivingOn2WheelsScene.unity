@@ -97,8 +97,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 1111653315}
+  m_LightingDataAsset: {fileID: 112000000, guid: 0fc9034395ee10f4c8b2b81e006d5a80,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 6b732cd3eabf6ea4792269f68e8e38d7,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -154,6 +156,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DrivingOn2WheelsArea (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8044083976606104615, guid: 73c024b5018900942b8d49957c74ff6f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8044083976606104632, guid: 73c024b5018900942b8d49957c74ff6f,
         type: 3}
@@ -244,6 +251,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DrivingOn2WheelsArea (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8044083976606104615, guid: 73c024b5018900942b8d49957c74ff6f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8044083976606104632, guid: 73c024b5018900942b8d49957c74ff6f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -332,6 +344,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DrivingOn2WheelsArea (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8044083976606104615, guid: 73c024b5018900942b8d49957c74ff6f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8044083976606104632, guid: 73c024b5018900942b8d49957c74ff6f,
         type: 3}
@@ -422,6 +439,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DrivingOn2WheelsArea (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 8044083976606104615, guid: 73c024b5018900942b8d49957c74ff6f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8044083976606104632, guid: 73c024b5018900942b8d49957c74ff6f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -511,6 +533,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DrivingOn2WheelsArea (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8044083976606104615, guid: 73c024b5018900942b8d49957c74ff6f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8044083976606104632, guid: 73c024b5018900942b8d49957c74ff6f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -597,7 +624,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -642,7 +669,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 7.535e-42, y: NaN, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -691,6 +718,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DrivingOn2WheelsArea (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8044083976606104615, guid: 73c024b5018900942b8d49957c74ff6f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8044083976606104632, guid: 73c024b5018900942b8d49957c74ff6f,
         type: 3}
@@ -780,6 +812,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DrivingOn2WheelsArea (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8044083976606104615, guid: 73c024b5018900942b8d49957c74ff6f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8044083976606104632, guid: 73c024b5018900942b8d49957c74ff6f,
         type: 3}
@@ -934,71 +971,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f18bda937d585044b6b2a85ecd28eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 5, y: 4, z: -5}
   target: {fileID: 1210241133}
-  translateSpeed: 2
-  rotationSpeed: 2
---- !u!850595691 &1111653315
-LightingSettings:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Settings.lighting
-  serializedVersion: 2
-  m_GIWorkflowMode: 0
-  m_EnableBakedLightmaps: 1
-  m_EnableRealtimeLightmaps: 1
-  m_RealtimeEnvironmentLighting: 1
-  m_BounceScale: 1
-  m_AlbedoBoost: 1
-  m_IndirectOutputScale: 1
-  m_UsingShadowmask: 1
-  m_BakeBackend: 1
-  m_LightmapMaxSize: 1024
-  m_BakeResolution: 40
-  m_Padding: 2
-  m_TextureCompression: 1
-  m_AO: 0
-  m_AOMaxDistance: 1
-  m_CompAOExponent: 1
-  m_CompAOExponentDirect: 0
-  m_ExtractAO: 0
-  m_MixedBakeMode: 2
-  m_LightmapsBakeMode: 1
-  m_FilterMode: 1
-  m_LightmapParameters: {fileID: 0}
-  m_ExportTrainingData: 0
-  m_TrainingDataDestination: TrainingData
-  m_RealtimeResolution: 2
-  m_ForceWhiteAlbedo: 0
-  m_ForceUpdates: 0
-  m_FinalGather: 0
-  m_FinalGatherRayCount: 256
-  m_FinalGatherFiltering: 1
-  m_PVRCulling: 1
-  m_PVRSampling: 1
-  m_PVRDirectSampleCount: 32
-  m_PVRSampleCount: 500
-  m_PVREnvironmentSampleCount: 500
-  m_PVREnvironmentReferencePointCount: 2048
-  m_LightProbeSampleCountMultiplier: 4
-  m_PVRBounces: 2
-  m_PVRRussianRouletteStartBounce: 2
-  m_PVREnvironmentMIS: 0
-  m_PVRFilteringMode: 2
-  m_PVRDenoiserTypeDirect: 0
-  m_PVRDenoiserTypeIndirect: 0
-  m_PVRDenoiserTypeAO: 0
-  m_PVRFilterTypeDirect: 0
-  m_PVRFilterTypeIndirect: 0
-  m_PVRFilterTypeAO: 0
-  m_PVRFilteringGaussRadiusDirect: 1
-  m_PVRFilteringGaussRadiusIndirect: 5
-  m_PVRFilteringGaussRadiusAO: 2
-  m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-  m_PVRFilteringAtrousPositionSigmaIndirect: 2
-  m_PVRFilteringAtrousPositionSigmaAO: 1
+  smoothSpeed: 0.125
+  offset: {x: 5, y: 4, z: -5}
 --- !u!4 &1210241133 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8047030821070347720, guid: 73c024b5018900942b8d49957c74ff6f,
@@ -1036,6 +1011,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DrivingOn2WheelsArea (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8044083976606104615, guid: 73c024b5018900942b8d49957c74ff6f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8044083976606104632, guid: 73c024b5018900942b8d49957c74ff6f,
         type: 3}
@@ -1126,6 +1106,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DrivingOn2WheelsArea (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8044083976606104615, guid: 73c024b5018900942b8d49957c74ff6f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8044083976606104632, guid: 73c024b5018900942b8d49957c74ff6f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1215,6 +1200,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DrivingOn2WheelsArea (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8044083976606104615, guid: 73c024b5018900942b8d49957c74ff6f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8044083976606104632, guid: 73c024b5018900942b8d49957c74ff6f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1303,6 +1293,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DrivingOn2WheelsArea (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8044083976606104615, guid: 73c024b5018900942b8d49957c74ff6f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8044083976606104632, guid: 73c024b5018900942b8d49957c74ff6f,
         type: 3}
