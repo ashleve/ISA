@@ -20,22 +20,22 @@ print(env.behavior_name)
 
 model_upload_frequency = 30_000
 
-wandb.init(entity="rl-cars", project="ISA_mlagents", group=None, job_type="box_collecting")
+wandb.init(entity="rl-cars", project="ISA_mlagents", group=None, job_type="eval")
 config = wandb.config
 
 config.behavior_name = env.behavior_name
 config.gamma = 0.99
 config.lamb = 0.95
 config.batch_size = 64
-config.memory_size = 2048
-config.hidden_size = 128
+config.memory_size = 6000
+config.hidden_size = 256
 config.actor_lr = 0.0003
 config.critic_lr = 0.0003
 config.ppo_multiple_epochs = 5
 config.eps = 0.2
 config.grad_clip_norm = 0.5
 config.entropy_weight = 0.0
-config.max_steps = 1_000_000
+config.max_steps = 15_000_000
 config.num_of_agents = len(env.agent_ids)
 config.obs_space = env.state_size
 config.action_space = env.action_size
@@ -50,6 +50,8 @@ print(device)
 
 actor = Actor(obs_space=config.obs_space, action_space=config.action_space, hidden_size=config.hidden_size).to(device)
 critic = Critic(obs_space=config.obs_space, hidden_size=config.hidden_size).to(device)
+# actor.load_state_dict(torch.load('actor_model.h5'))
+# critic.load_state_dict(torch.load('critic_model.h5'))
 
 wandb.watch(actor)
 wandb.watch(critic)
@@ -148,12 +150,12 @@ def update():
     # adv = (gae_returns - state_values).detach().to(device)
 
     # normalize rewards-to-go
-    # rewards_to_go = (rewards_to_go - rewards_to_go.mean()) / (rewards_to_go.std() + 1e-5)
+    rewards_to_go = (rewards_to_go - rewards_to_go.mean()) / (rewards_to_go.std() + 1e-5)
 
     # compute advantage estimations
     adv = (rewards_to_go - state_values)
 
-    # adv = (adv - adv.mean()) / (adv.std() + 1e-5)
+    adv = (adv - adv.mean()) / (adv.std() + 1e-5)
 
     # rewards_to_go = gae_returns
 
