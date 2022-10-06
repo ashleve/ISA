@@ -15,7 +15,7 @@ PPO available at [https://github.com/ashleve/ISA/tree/master/Python](https://git
 
 | DrivingOn2WheelsAgent       | CoinCollectingAgent         |
 |-----------------------------|-----------------------------|
-| <img src="https://github.com/hobogalaxy/ISA/blob/resources/gifs/drive2wheels.gif" width="450"> | <img src="https://github.com/hobogalaxy/ISA/blob/resources/imgs/CoinCollectingAgent.png" width="450"> |
+| <img src="https://github.com/hobogalaxy/ISA/blob/resources/gifs/drive2wheels.gif" width="380"> | <img src="https://github.com/hobogalaxy/ISA/blob/resources/imgs/CoinCollectingAgent.png" width="380"> |
 
 
 <br>
@@ -23,7 +23,7 @@ PPO available at [https://github.com/ashleve/ISA/tree/master/Python](https://git
 
 | WheelSimCarAgent            | SteeringWheelSimCarAgent    |
 |-----------------------------|-----------------------------|
-| <img src="https://github.com/hobogalaxy/ISA/blob/resources/gifs/wheelSimAgent.gif" width="450"> | <img src="https://github.com/hobogalaxy/ISA/blob/resources/gifs/steeringWheelSimAgent.gif" width="450"> |
+| <img src="https://github.com/hobogalaxy/ISA/blob/resources/gifs/wheelSimAgent.gif" width="380"> | <img src="https://github.com/hobogalaxy/ISA/blob/resources/gifs/steeringWheelSimAgent.gif" width="380"> |
 
 ### WheelSimCarAgent vs SteeringWheelSimCarAgent
 ![](https://github.com/hobogalaxy/ISA/blob/resources/imgs/chart1.png)
