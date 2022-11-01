@@ -10,6 +10,7 @@ Investigating ways of simulating autonomous vehicles in Unity and fun experiment
 ## Algorithms
 
 All agents were trained on Proximal Policy Optimization (PPO) algorithm, which was written from scratch in Pytorch. <br>
+
 PPO available at [https://github.com/ashleve/ISA/tree/master/Python](https://github.com/ashleve/ISA/tree/master/Python).
 
 ## Agents
